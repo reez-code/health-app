@@ -1,5 +1,7 @@
+import Doctor from "./components/Doctor";
+
 function App() {
-  return <div></div>;
+  return <Doctor />;
 }
 
 export default App;
