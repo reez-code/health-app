@@ -31,16 +31,6 @@
   color: grey;
 }
 
-/*DELETE THIS TWO LINE*/
-.delete {
-  background-color: #b2b2fd;
-}
-
-.card-img div {
-  width: 90%;
-}
-/*IF USING IMAGES*/
-
 .card {
   background-color: white;
   color: black;
@@ -63,7 +53,7 @@
 
 /* Change the .card-img div to .card-img img to use img*/
 .card-img a,
-.card-img div {
+.card-img img {
   height: 150px;
   width: 90%;
   /* Change this width here to change the width of the color/image */
