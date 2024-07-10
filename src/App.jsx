@@ -1,7 +1,8 @@
 import Doctor from "./components/Doctor";
+import DoctorDetails from "./components/DoctorDetails";
 
 function App() {
-  return <Doctor />;
+  return <DoctorDetails />;
 }
 
 export default App;
