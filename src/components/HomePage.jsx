@@ -49,7 +49,7 @@ const HomePage = () => {
 
       <Container className="my-5">
         <Row>
-          <Col>
+          <Col id='about'>
             <h2>About Us</h2>
             <p>
               Welcome to our website! We are dedicated to providing the best service possible. Our team of professionals is committed to ensuring you have a great experience. We offer a wide range of services to meet your needs.
