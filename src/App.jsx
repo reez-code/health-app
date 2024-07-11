@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import Footer from './components/Footer'
+import DoctorPage from './components/DoctorPage';
 import './App.css'
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
         <div className="content flex-grow-1">
           <Routes>
 
-            <Route path='/' element={<HomePage/>}/>       
+            <Route path='/' element={<HomePage/>}/>  
+            <Route path='/doctor' element={<DoctorPage/>}/>     
           </Routes>
         </div>
        

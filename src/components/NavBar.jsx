@@ -1,17 +1,19 @@
-
+// NavBar.jsx
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {Link as ScrollLink} from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 import LoginForm from './LogIn';
-import HomePage from './HomePage';
+
 
 function NavBar() {
   const [showModal, setShowModal] = useState(false);
   const [currentUserType, setCurrentUserType] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const handleShowModal = (userType) => {
     setCurrentUserType(userType);
@@ -19,6 +21,18 @@ function NavBar() {
   };
 
   const handleCloseModal = () => setShowModal(false);
+
+  const handleLogin = (userType) => {
+    setIsLoggedIn(true);
+    setShowModal(false);
+    if (userType === 'Doctor') {
+      navigate('/doctor');
+    }else if (userType === 'Admin'){
+      navigate ('/admin');
+    }else if (userType === 'Patient'){
+      navigate('/Patient')
+    }
+  };
 
   return (
     <>
@@ -41,9 +55,8 @@ function NavBar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <LoginForm userType={currentUserType} show={showModal} handleClose={handleCloseModal} />
+      <LoginForm userType={currentUserType} show={showModal} handleClose={handleCloseModal} handleLogin={handleLogin} />
     </>
-
   );
 }
 
