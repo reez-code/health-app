@@ -1,4 +1,5 @@
 import "../css/doctor.css";
+
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 function Doctor() {
@@ -9,7 +10,7 @@ function Doctor() {
     <Row xs={1} md={3} className="g-4">
       {Array.from({ length: 4 }).map((_, idx) => (
         <div key={idx}>
-          <div className="card">
+          <div className="doctorCard">
             <div
               className="card-image"
               style={{ backgroundImage: `url(${image})` }}
