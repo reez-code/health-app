@@ -15,7 +15,6 @@ function App() {
         <div className="content flex-grow-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/d" element={<Department />} />
           </Routes>
         </div>
       </div>
