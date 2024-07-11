@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import "./App.css";
 import Doctor from "./components/Doctor";
 import DoctorDetails from "./components/DoctorDetails";
-
+import Patient from "./components/Patient";
 function App() {
   return (
     <Router>
@@ -13,7 +13,7 @@ function App() {
       </div>
       <div className="">
         <Routes>
-          <Route path="/" element={<Doctor />} />
+          <Route path="/" element={<Patient />} />
         </Routes>
       </div>
     </Router>
