@@ -8,6 +8,8 @@ import {
 } from "cdbreact";
 
 import "../css/adminSideNav.css";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 function AdminSideNav() {
   return (
@@ -19,12 +21,14 @@ function AdminSideNav() {
           </CDBSidebarHeader>
           <CDBSidebarContent>
             <CDBSidebarMenu>
-              <CDBSidebarMenuItem icon="th-large">Dashboard</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="th-large">
+                <Nav.Link href="/admin/doctors">Doctors</Nav.Link>
+              </CDBSidebarMenuItem>
               <CDBSidebarMenuItem icon="sticky-note">
-                Components
+                <Nav.Link href="/admin/departments">Departments</Nav.Link>
               </CDBSidebarMenuItem>
               <CDBSidebarMenuItem icon="chart-line" iconType="solid">
-                Metrics
+                <Nav.Link href="/admin/patients">Patients Admitted</Nav.Link>
               </CDBSidebarMenuItem>
             </CDBSidebarMenu>
           </CDBSidebarContent>
