@@ -1,4 +1,7 @@
 import React from "react";
+import AdminNav from "./AdminNav";
+import AdminSideNav from "./AdminSideNav";
+import Department from "./Department";
 
 function AdminDep() {
   return (
@@ -7,6 +10,7 @@ function AdminDep() {
         <AdminNav />
       </div>
       <AdminSideNav />
+      <Department />
     </>
   );
 }
