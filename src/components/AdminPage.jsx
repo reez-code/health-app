@@ -1,7 +1,14 @@
-import React from "react";
+import "../App.css";
+import AdminNav from "./AdminNav";
 
 function AdminPage() {
-  return <div></div>;
+  return (
+    <>
+      <div className="navbar">
+        <AdminNav />
+      </div>
+    </>
+  );
 }
 
 export default AdminPage;
