@@ -1,5 +1,6 @@
 import "../App.css";
 import AdminNav from "./AdminNav";
+import AdminSideNav from "./AdminSideNav";
 
 function AdminPage() {
   return (
@@ -7,6 +8,7 @@ function AdminPage() {
       <div className="navbar">
         <AdminNav />
       </div>
+      <AdminSideNav />
     </>
   );
 }
