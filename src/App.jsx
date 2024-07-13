@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import HomePage from "./components/HomePage";
-import Footer from "./components/Footer";
 import "./App.css";
 import AdminPage from "./components/AdminPage";
 import AdminDoc from "./components/AdminDoc";
 import AdminDep from "./components/AdminDep";
+import AdminPatient from "./components/AdminPatient";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/doctors" element={<AdminDoc />} />
             <Route path="/admin/departments" element={<AdminDep />} />
+            <Route path="/admin/patients" element={<AdminPatient />} />
           </Routes>
         </div>
       </div>

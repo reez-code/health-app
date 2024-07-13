@@ -5,10 +5,10 @@ function Department() {
     <Row xs={1} md={3} className="g-4" style={{ "--mdb-gutter-x": "-20.5rem" }}>
       {Array.from({ length: 10 }).map((_, idx) => (
         <Col key={idx}>
-          <div class="body">
-            <a class="depcard human-resources" href="#">
-              <div class="overlay"></div>
-              <div class="circle">
+          <div className="body">
+            <a className="depcard human-resources" href="#">
+              <div className="overlay"></div>
+              <div className="circle">
                 <svg
                   xmlns:xlink="http://www.w3.org/1999/xlink"
                   xmlns="http://www.w3.org/2000/svg"
