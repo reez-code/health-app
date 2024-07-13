@@ -17,7 +17,7 @@ function AdminSideNav() {
       <div style={{ marginTop: "3%" }} className="side-nav">
         <CDBSidebar textColor="#333" backgroundColor="#f0f0f0">
           <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>
-            Contrast Light Mode
+            Hello John Doe
           </CDBSidebarHeader>
           <CDBSidebarContent>
             <CDBSidebarMenu>
