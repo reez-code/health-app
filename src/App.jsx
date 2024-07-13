@@ -1,24 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar";
+
 import HomePage from "./components/HomePage";
-import Footer from "./components/Footer";
 import "./App.css";
-import Department from "./components/Department";
+import AdminPage from "./components/AdminPage";
+import AdminDoc from "./components/AdminDoc";
+import AdminDep from "./components/AdminDep";
+import AdminPatient from "./components/AdminPatient";
+
 function App() {
   return (
     <Router>
       <div className="d-flex">
-        <div className="navbar">
-          <NavBar />
-        </div>
         <div className="content flex-grow-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/admin" element={<AdminPage />} />
+            <Route path="/admin/doctors" element={<AdminDoc />} />
+            <Route path="/admin/departments" element={<AdminDep />} />
+            <Route path="/admin/patients" element={<AdminPatient />} />
           </Routes>
         </div>
       </div>
-      <Footer />
     </Router>
   );
 }
