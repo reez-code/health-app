@@ -8,6 +8,7 @@ import AdminDoc from "./components/AdminDoc";
 import DoctorPage from './components/DoctorPage';
 import AdminDep from "./components/AdminDep";
 import AdminPatient from "./components/AdminPatient";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/doctors" element={<AdminDoc />} />
             <Route path="/admin/departments" element={<AdminDep />} />
-       <Route path="/admin/patients" element={<AdminPatient />} />
-            <Route path='/doctor' element={<DoctorPage/>}/>     
+            <Route path="/admin/patients" element={<AdminPatient />} />
+            <Route path='/doctor' element={<DoctorPage/>}/>
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
       </div>
