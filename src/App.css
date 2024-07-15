@@ -7,15 +7,30 @@ body {
   overflow-x: hidden;
 }
 
+.carousel-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 70%;
+  text-align: center;
 }
 
 .carousel-caption h1,
 .carousel-caption p {
   color: #fff;
+  margin: 0; 
 }
 
 .carousel-container {
@@ -23,7 +38,6 @@ body {
   overflow: hidden;
 }
 
-/* styles.css */
 .modal-header {
   background-color: #007bff;
   color: white;
@@ -41,4 +55,75 @@ body {
   background-color: #007bff;
   border: none;
   border-radius: 0.25rem;
+}
+
+.about-us-section {
+  background-color: #ccc;
+  padding: 50px 0;
+}
+
+.about-section {
+  padding: 100px 0;
+}
+
+.about-left, .about-right, .about-middle, .about-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.about-left, .about-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-left .fixed-image, .about-right .fixed-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-content {
+  padding: 20px;
+}
+
+.about-vertical {
+  border-right: 2px solid #ccc;
+  height: 100%;
+}
+
+.colored-background {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.about-right h3 {
+  color: black;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  font-size: 1.2rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
+  }
 }

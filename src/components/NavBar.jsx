@@ -38,7 +38,7 @@ function NavBar() {
     <>
       <Navbar expand="lg" className="bg-body-tertiary fixed-top">
         <Container>
-          <Navbar.Brand as={Link} to="/">P.A.L.B</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">HealthSync</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -50,6 +50,8 @@ function NavBar() {
                 <NavDropdown.Item onClick={() => handleShowModal('Admin')}>Admin Login</NavDropdown.Item>
                 <NavDropdown.Item onClick={() => handleShowModal('Doctor')}>Doctor Login</NavDropdown.Item>
                 <NavDropdown.Item onClick={() => handleShowModal('Patient')}>Patient Login</NavDropdown.Item>
+                <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
