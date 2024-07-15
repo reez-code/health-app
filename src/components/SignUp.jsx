@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 const SignUp = () => {
+  const [role, setRole] = useState('user'); // Default role as 'user'
+
+  const handleRoleChange = (e) => {
+    setRole(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here, including role selection
+    console.log('Role selected:', role);
+    // Example: Implement your API call or database handling here
+  };
+
   return (
     <Container className="py-5">
       <Row>
@@ -15,7 +28,7 @@ const SignUp = () => {
         <Col md={6}>
           <div className="signup-form">
             <h2 className="mb-4">Sign Up</h2>
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter your name" />
@@ -34,6 +47,34 @@ const SignUp = () => {
               <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
                 <Form.Label>Confirm Password</Form.Label>
                 <Form.Control type="password" placeholder="Confirm Password" />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label as="legend">Role</Form.Label>
+                <Form.Check
+                  type="radio"
+                  label="Admin"
+                  name="role"
+                  value="admin"
+                  checked={role === 'admin'}
+                  onChange={handleRoleChange}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Doctor"
+                  name="role"
+                  value="doctor"
+                  checked={role === 'doctor'}
+                  onChange={handleRoleChange}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Patient"
+                  name="role"
+                  value="user"
+                  checked={role === 'patient'}
+                  onChange={handleRoleChange}
+                />
               </Form.Group>
 
               <Button variant="primary" type="submit">
