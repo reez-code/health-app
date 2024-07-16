@@ -21,13 +21,10 @@ function PatientSide() {
           <CDBSidebarContent>
             <CDBSidebarMenu>
               <CDBSidebarMenuItem icon="th-large">
-                <Nav.Link href="/admin/doctors">Doctors</Nav.Link>
-              </CDBSidebarMenuItem>
-              <CDBSidebarMenuItem icon="sticky-note">
-                <Nav.Link href="/admin/departments">Departments</Nav.Link>
+                <Nav.Link href="/admin/doctors">Book an Appoitment</Nav.Link>
               </CDBSidebarMenuItem>
               <CDBSidebarMenuItem icon="chart-line" iconType="solid">
-                <Nav.Link href="/admin/patients">Patients Admitted</Nav.Link>
+                <Nav.Link href="/admin/patients">Appointment Booked</Nav.Link>
               </CDBSidebarMenuItem>
             </CDBSidebarMenu>
           </CDBSidebarContent>
