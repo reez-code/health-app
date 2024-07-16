@@ -1,4 +1,5 @@
 import PatientNav from "./PatientNav";
+import PatientSide from "./PatientSide";
 import "../App.css";
 
 function PatientPage() {
@@ -7,6 +8,7 @@ function PatientPage() {
       <div className="navbar">
         <PatientNav />
       </div>
+      <PatientSide />
     </>
   );
 }

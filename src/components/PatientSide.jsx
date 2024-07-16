@@ -10,7 +10,7 @@ import {
 import "../css/adminSideNav.css";
 import Nav from "react-bootstrap/Nav";
 
-function AdminSideNav() {
+function PatientSide() {
   return (
     <>
       <div style={{ marginTop: "3%" }} className="side-nav">
@@ -46,4 +46,4 @@ function AdminSideNav() {
   );
 }
 
-export default AdminSideNav;
+export default PatientSide;
