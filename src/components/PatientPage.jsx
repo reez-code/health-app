@@ -1,6 +1,7 @@
 import PatientNav from "./PatientNav";
 import PatientSide from "./PatientSide";
 import "../App.css";
+import Appointment from "./Appointment";
 
 function PatientPage() {
   return (
@@ -9,6 +10,7 @@ function PatientPage() {
         <PatientNav />
       </div>
       <PatientSide />
+      <Appointment />
     </>
   );
 }
