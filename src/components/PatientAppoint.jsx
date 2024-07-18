@@ -20,6 +20,9 @@ function PatientAppoint() {
               Appointment Date: 12/2/24 Time: 8:04
               <div className="author">
                 <Button variant="primary">Details</Button>
+                <Button variant="danger" style={{ marginLeft: "10px" }}>
+                  Delete
+                </Button>
               </div>
             </div>
           </div>
