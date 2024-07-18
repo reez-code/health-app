@@ -31,7 +31,7 @@ function Appointment() {
               ></div>
               <div className="category"> John Doe </div>
               <div className="heading">
-                Specialisation: Cardiologist
+                Speciality: Cardiology
                 <div className="author">
                   <Button variant="primary" onClick={handleShow}>
                     Book an Appointment
@@ -52,7 +52,7 @@ function Appointment() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>
               <Form.Control
-                type="email"
+                type="datetime-local"
                 placeholder="name@example.com"
                 autoFocus
               />
@@ -61,7 +61,7 @@ function Appointment() {
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
-              <Form.Label>Example textarea</Form.Label>
+              <Form.Label>Medical Concern</Form.Label>
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
           </Form>
