@@ -50,7 +50,7 @@ function Appointment() {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Preffered Date and Time</Form.Label>
               <Form.Control
                 type="datetime-local"
                 placeholder="name@example.com"
