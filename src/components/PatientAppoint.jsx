@@ -17,7 +17,7 @@ function PatientAppoint() {
             ></div>
             <div className="category"> John Doe </div>
             <div className="heading">
-              Appointment Date: 12/2/24 8:04
+              Appointment Date: 12/2/24 Time: 8:04
               <div className="author">
                 <Button variant="primary">Details</Button>
               </div>

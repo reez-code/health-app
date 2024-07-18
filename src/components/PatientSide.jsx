@@ -24,7 +24,9 @@ function PatientSide() {
                 <Nav.Link href="/patient">Book an Appoitment</Nav.Link>
               </CDBSidebarMenuItem>
               <CDBSidebarMenuItem icon="chart-line" iconType="solid">
-                <Nav.Link href="/patient">Appointment Booked</Nav.Link>
+                <Nav.Link href="/patient/appointments">
+                  Appointment Booked
+                </Nav.Link>
               </CDBSidebarMenuItem>
             </CDBSidebarMenu>
           </CDBSidebarContent>
