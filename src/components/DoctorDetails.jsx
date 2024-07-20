@@ -13,7 +13,7 @@ function DoctorDetails() {
         <div className="project-info">
           <div className="flex">
             <div className="project-title">John Doe</div>
-            <span className="tag">Pharamacy</span>
+            <span className="tag">Cardiologist</span>
           </div>
           <span className="lighter">
             Phone Number: 012345678,

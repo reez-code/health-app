@@ -5,10 +5,12 @@ import HomePage from "./components/HomePage";
 import "./App.css";
 import AdminPage from "./components/AdminPage";
 import AdminDoc from "./components/AdminDoc";
-import DoctorPage from './components/DoctorPage';
+import DoctorPage from "./components/DoctorPage";
 import AdminDep from "./components/AdminDep";
 import AdminPatient from "./components/AdminPatient";
 import SignUp from "./components/SignUp";
+import PatientPage from "./components/PatientPage";
+import AppointPage from "./components/AppointPage";
 
 function App() {
   return (
@@ -21,8 +23,10 @@ function App() {
             <Route path="/admin/doctors" element={<AdminDoc />} />
             <Route path="/admin/departments" element={<AdminDep />} />
             <Route path="/admin/patients" element={<AdminPatient />} />
-            <Route path='/doctor' element={<DoctorPage/>}/>
+            <Route path="/doctor" element={<DoctorPage />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/patient" element={<PatientPage />} />
+            <Route path="/patient/appointments" element={<AppointPage />} />
           </Routes>
         </div>
       </div>

@@ -10,7 +10,7 @@ import {
 import "../css/adminSideNav.css";
 import Nav from "react-bootstrap/Nav";
 
-function AdminSideNav() {
+function PatientSide() {
   return (
     <>
       <div style={{ marginTop: "3%" }} className="side-nav">
@@ -21,13 +21,12 @@ function AdminSideNav() {
           <CDBSidebarContent>
             <CDBSidebarMenu>
               <CDBSidebarMenuItem icon="th-large">
-                <Nav.Link href="/admin/doctors">Doctors</Nav.Link>
-              </CDBSidebarMenuItem>
-              <CDBSidebarMenuItem icon="sticky-note">
-                <Nav.Link href="/admin/departments">Departments</Nav.Link>
+                <Nav.Link href="/patient">Book an Appointment</Nav.Link>
               </CDBSidebarMenuItem>
               <CDBSidebarMenuItem icon="chart-line" iconType="solid">
-                <Nav.Link href="/admin/patients">Patients Admitted</Nav.Link>
+                <Nav.Link href="/patient/appointments">
+                  Appointment Booked
+                </Nav.Link>
               </CDBSidebarMenuItem>
             </CDBSidebarMenu>
           </CDBSidebarContent>
@@ -46,4 +45,4 @@ function AdminSideNav() {
   );
 }
 
-export default AdminSideNav;
+export default PatientSide;
