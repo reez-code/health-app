@@ -26,16 +26,11 @@ function PatientAppoint() {
                 className="card-image"
                 style={{ backgroundImage: `url(${image})` }}
               ></div>
-              <div className="category"> John Doe </div>
+              <div className="category">DR. John Doe </div>
               <div className="heading">
                 Appointment Date: 12/2/24 Time: 8:04
                 <div className="author">
-                  <Button variant="primary">Details</Button>
-                  <Button
-                    variant="danger"
-                    style={{ marginLeft: "10px" }}
-                    onClick={handleShow}
-                  >
+                  <Button variant="danger" onClick={handleShow}>
                     Delete
                   </Button>
                 </div>
