@@ -10,6 +10,7 @@ import AdminPatient from "./components/AdminPatient";
 import SignUp from "./components/SignUp";
 import PatientPage from "./components/PatientPage";
 import AppointPage from "./components/AppointPage";
+import AdminForm from "./components/AdminForm";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/patient" element={<PatientPage />} />
             <Route path="/patient/appointments" element={<AppointPage />} />
+            <Route path="/admin-form" element={<AdminForm />} />
           </Routes>
         </div>
       </div>

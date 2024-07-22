@@ -1,6 +1,5 @@
 import "../App.css";
 import "../css/button.css";
-import Button from "react-bootstrap/Button";
 import AdminNav from "./AdminNav";
 import AdminSideNav from "./AdminSideNav";
 import Doctor from "./Doctor";
@@ -17,9 +16,9 @@ function AdminPage() {
         <AdminNav />
       </div>
       <AdminSideNav />
-      <NavLink to="/admin/departments">
+      <NavLink to="/admin-form">
         <button className="hire-button" style={styling}>
-          <span>Hire Another Doctor</span>
+          <span className="text">Hire Another Doctor</span>
         </button>
       </NavLink>
       <Doctor />

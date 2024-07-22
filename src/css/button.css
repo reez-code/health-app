@@ -9,7 +9,7 @@
   cursor: pointer;
 }
 
-.hire-button span {
+.hire-button .text {
   position: relative;
   display: flex;
   justify-content: center;
@@ -25,12 +25,12 @@
   box-shadow: 0 0.4em 0.1em 0.019em #fff;
 }
 
-.hire-button span:hover {
+.hire-button .text:hover {
   transition: all 0.5s;
   transform: translate(0, 0.4em);
   box-shadow: 0 0 0 0 #fff;
 }
 
-.hire-button span:not(hover) {
+.hire-button .text:not(hover) {
   transition: all 1s;
 }
