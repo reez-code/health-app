@@ -1,7 +1,7 @@
 import "../App.css";
 import AdminNav from "./AdminNav";
 import AdminSideNav from "./AdminSideNav";
-
+import Doctor from "./Doctor";
 function AdminPage() {
   return (
     <>
@@ -9,6 +9,7 @@ function AdminPage() {
         <AdminNav />
       </div>
       <AdminSideNav />
+      <Doctor />
     </>
   );
 }
