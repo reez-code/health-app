@@ -21,7 +21,7 @@ function AdminSideNav() {
           <CDBSidebarContent>
             <CDBSidebarMenu>
               <CDBSidebarMenuItem icon="th-large">
-                <Nav.Link href="/admin/doctors">Doctors</Nav.Link>
+                <Nav.Link href="/admin">Doctors</Nav.Link>
               </CDBSidebarMenuItem>
               <CDBSidebarMenuItem icon="sticky-note">
                 <Nav.Link href="/admin/departments">Departments</Nav.Link>
