@@ -32,6 +32,24 @@ const SignUp = () => {
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" />
               </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicGender">
+                <Form.Label>Gender</Form.Label>
+                <Form.Control as="select">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </Form.Control>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicAge">
+                <Form.Label>Age</Form.Label>
+                <Form.Control type="number" placeholder="Enter your age" />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPhone">
+                <Form.Label>Phone Number</Form.Label>
+                <Form.Control type="tel" placeholder="Enter your phone number" />
+              </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
