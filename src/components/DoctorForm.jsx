@@ -5,26 +5,29 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
+import { SERVER_URL } from "../../utils";
 function DoctorForm() {
-  // const [categories, setCategories] = useState([]);
+  const [specializations, setSpecializations] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`${BASE_URL}/categories`, {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   }).then((res) =>
-  //     res
-  //       .json()
-  //       .then((data) => {
-  //         setCategories(data);
-  //       })
-  //       .catch((err) => console.log(err))
-  //   );
-  // }, []);
+  useEffect(() => {
+    fetch(`${SERVER_URL}/specializations`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMTczMDc4MCwianRpIjoiMGI2OWJmYzYtNjNmNC00YjUzLWJiYmYtMmJkNzZhYzU5NDc4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTcyMTczMDc4MCwiY3NyZiI6ImVjYWY5ZTVlLTFmZGEtNDAyZS04MzBkLTYyZDgzY2QyMzVkZCIsImV4cCI6MTcyMTgxNzE4MCwicm9sZSI6ImFkbWluIn0.TIWZpe3hwEFQnOwNrnp9Z8o0geYa18narnBh_UBko4Y",
+      },
+    }).then((res) =>
+      res
+        .json()
+        .then((data) => {
+          setSpecializations(data);
+        })
+        .catch((err) => console.log(err))
+    );
+  }, []);
   const schema = z.object({
-    user_name: z
+    name: z
       .string({
         required_error: "Name is required",
       })
@@ -39,32 +42,22 @@ function DoctorForm() {
         required_error: "Email is required",
       })
       .min(1, { message: "Email is required" }),
-    name: z
-      .string({
-        required_error: "Game Name is required",
-      })
-      .min(1, { message: "Game Name is required" }),
     image: z
       .string({
         required_error: "Image is required",
       })
       .min(1, { message: "Image is required" })
       .url({ message: "Enter a valid image url" }),
-    price: z
-      .string({
-        required_error: "Price is required",
-      })
-      .min(1, { message: "Price is required" }),
-    category_id: z
+    specialization_id: z
       .string({
         required_error: "Category is required",
       })
       .min(1, { message: "Category is required" }),
-    description: z
+    password: z
       .string({
-        required_error: "Description is required",
+        required_error: "Password is required",
       })
-      .min(1, { message: "Description is required" }),
+      .min(1, { message: "Password is required" }),
   });
 
   const { control, handleSubmit, formState } = useForm({
@@ -74,33 +67,32 @@ function DoctorForm() {
       phone_number: "",
       email: "",
       image: "",
-      price: "",
-      category_id: "",
-      description: "",
+      specialization_id: "",
       password: "",
     },
   });
 
-  //  const onSumbit = async (values) => {
-  //    await fetch(`${BASE_URL}/sell`, {
-  //      method: "POST",
-  //      headers: {
-  //        "Content-Type": "application/json",
-  //      },
-  //      body: JSON.stringify({
-  //        ...values,
-  //        price: Number(values.price),
-  //        category_id: Number(values.category_id),
-  //      }),
-  //    })
-  //      .then((res) => res.json())
-  //      .then((data) => console.log(data))
-  //      .catch((err) => console.log(err));
-  //  };
+  const onSumbit = async (values) => {
+    console.log(values);
+    await fetch(`${SERVER_URL}/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...values,
+        role: "doctor",
+        specialization_id: Number(values.specialization_id),
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
-      <form className="form-container">
+      <form className="form-container" onSubmit={handleSubmit(onSumbit)}>
         <div className="form">
           <span className="heading">Fill the Form </span>
           <Controller
@@ -173,24 +165,7 @@ function DoctorForm() {
             )}
           />
           <Controller
-            name="price"
-            control={control}
-            render={({ field, fieldState }) => (
-              <div>
-                <input
-                  placeholder="Price"
-                  type="number"
-                  className="input"
-                  {...field}
-                />
-                {fieldState.invalid && (
-                  <p className="text-danger">{fieldState.error.message}</p>
-                )}
-              </div>
-            )}
-          />
-          {/* <Controller
-            name="category_id"
+            name="specialization_id"
             control={control}
             render={({ field, fieldState }) => (
               <div>
@@ -199,10 +174,10 @@ function DoctorForm() {
                   className="input"
                   {...field}
                 >
-                  <option>Select Category</option>
-                  {categories.map((category) => (
-                    <option key={category.id} value={category.id}>
-                      {category.name}
+                  <option>Select Specialisation</option>
+                  {specializations.map((specialization) => (
+                    <option key={specialization.id} value={specialization.id}>
+                      {specialization.name}
                     </option>
                   ))}
                 </Form.Select>
@@ -212,7 +187,7 @@ function DoctorForm() {
                 )}
               </div>
             )}
-          /> */}
+          />
 
           <Controller
             name="password"
@@ -221,7 +196,7 @@ function DoctorForm() {
               <div>
                 <input
                   placeholder="Password"
-                  type="url"
+                  type="text"
                   className="input"
                   {...field}
                 />
