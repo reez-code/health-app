@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "../App.css";
 import "../css/button.css";
 import AdminNav from "./AdminNav";
@@ -9,7 +10,7 @@ function AdminPage() {
     marginLeft: "80%",
     marginTop: "5%",
   };
-
+  const [doctors, setDoctors] = useState([]);
   return (
     <>
       <div className="navbar">
