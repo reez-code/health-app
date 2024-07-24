@@ -2,31 +2,25 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import "../css/patient.css";
 import { Col } from "react-bootstrap";
-function Patient() {
+function Patient({ name, age, gender, phone_number, email, diagnosis }) {
   return (
     <>
-      <Row xs={1} md={2} className="g-4">
-        {Array.from({ length: 4 }).map((_, idx) => (
-          <Col key={idx}>
-            <div className="patient-card-container">
-              <div className="patient-card">
-                <div className="front-content">
-                  <p>John Doe</p>
-                </div>
-                <div className="content">
-                  <p className="heading">Appointment Date: 12/12/23</p>
-                  <p>
-                    Age: 23 <br />
-                    Gender: Male <br />
-                    Phone-Number: 012345678 <br />
-                    Email: john@gmail.com
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Col>
-        ))}
-      </Row>
+      <div className="patient-card-container">
+        <div className="patient-card">
+          <div className="front-content">
+            <p>{name}</p>
+          </div>
+          <div className="content">
+            <p className="heading">Diagnosis: {diagnosis}</p>
+            <p>
+              Age: {age} <br />
+              Gender: {gender} <br />
+              Phone-Number: {phone_number} <br />
+              Email: {email}
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
