@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 
 function LoginForm({ userType, show, handleClose, handleLogin }) {
-  const [formFields, setFormFields] = useState({ email: '', password: '', username: '' });
+  const [formFields, setFormFields] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,18 +35,6 @@ function LoginForm({ userType, show, handleClose, handleLogin }) {
               required
             />
           </Form.Group>
-          {userType === 'Admin' && (
-            <Form.Group className="mb-3" controlId="formUsername">
-              <Form.Label>Username</Form.Label>
-              <Form.Control
-                type="text"
-                name="username"
-                placeholder="Enter username"
-                value={formFields.username}
-                onChange={handleChange}
-              />
-            </Form.Group>
-          )}
           <Form.Group className="mb-3" controlId="formPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
