@@ -1,12 +1,52 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import React, { useState } from "react";
+import { SERVER_URL } from "../../utils";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 const SignUp = () => {
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    gender: "",
+    age: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+    role: "patient",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('User signed up');
-    // Example: Implement your API call or database handling here
+
+    // Add role to the form data
+    const dataToSubmit = { ...formData, role: "patient" };
+    console.log(dataToSubmit);
+
+    try {
+      const response = await fetch(`${SERVER_URL}/signup`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...dataToSubmit }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      console.log("User signed up:", result);
+    } catch (error) {
+      console.error("Error signing up:", error);
+    }
   };
 
   return (
@@ -23,42 +63,78 @@ const SignUp = () => {
           <div className="signup-form">
             <h2 className="mb-4">Sign Up</h2>
             <Form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Group className="mb-3" controlId="name">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your name" />
+                <Form.Control
+                  type="text"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicGender">
+
+              <Form.Group className="mb-3" controlId="gender">
                 <Form.Label>Gender</Form.Label>
-                <Form.Control as="select">
-                  <option>Male</option>
-                  <option>Female</option>
-                  <option>Other</option>
+                <Form.Control
+                  as="select"
+                  value={formData.gender}
+                  onChange={handleChange}
+                >
+                  <option value="">Select gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
                 </Form.Control>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicAge">
+              <Form.Group className="mb-3" controlId="age">
                 <Form.Label>Age</Form.Label>
-                <Form.Control type="number" placeholder="Enter your age" />
+                <Form.Control
+                  type="number"
+                  placeholder="Enter your age"
+                  value={formData.age}
+                  onChange={handleChange}
+                />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPhone">
+              <Form.Group className="mb-3" controlId="phone">
                 <Form.Label>Phone Number</Form.Label>
-                <Form.Control type="tel" placeholder="Enter your phone number" />
+                <Form.Control
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3" controlId="password">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
+              <Form.Group className="mb-3" controlId="confirmPassword">
                 <Form.Label>Confirm Password</Form.Label>
-                <Form.Control type="password" placeholder="Confirm Password" />
+                <Form.Control
+                  type="password"
+                  placeholder="Confirm Password"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                />
               </Form.Group>
 
               <Button variant="primary" type="submit">

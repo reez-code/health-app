@@ -17,15 +17,9 @@ function AdminNav() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav className="ms-auto">
-              <NavDropdown title="Sign Up/Log In" id="basic-nav-dropdown">
+              <NavDropdown title="Log Out" id="basic-nav-dropdown">
                 <NavDropdown.Item onClick={() => handleShowModal("Admin")}>
-                  Admin Login
-                </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => handleShowModal("Doctor")}>
-                  Doctor Login
-                </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => handleShowModal("Patient")}>
-                  Patient Login
+                  Admin Logout
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>

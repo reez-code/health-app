@@ -10,14 +10,14 @@ function PatientNav() {
     <>
       <Navbar expand="lg" className="bg-body-tertiary fixed-top">
         <Container>
-          <Navbar.Brand as={Link} to="/admin">
-            P.A.L.B
+          <Navbar.Brand as={Link} to="/patient">
+            HealthSync
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav className="ms-auto">
-              <NavDropdown title="Sign Up/Log In" id="basic-nav-dropdown">
+              <NavDropdown title="Log Out" id="basic-nav-dropdown">
                 <NavDropdown.Item onClick={() => handleShowModal("Admin")}>
                   Admin Login
                 </NavDropdown.Item>
